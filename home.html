@@ -1,0 +1,19 @@
+<!-- Replace "$" with title, tags, author to narrow your searches -->
+<div class="box">
+    <input class="search" placeholder="Search" data-ng-model="search.$">
+</div>
+
+<!-- Using the ngRepeat directive to loop through the results -->
+<div class="box" data-ng-repeat="photo in photos.items | filter:search:strict">
+    <div class="img">
+        <a data-ng-href="/details/{{ photo.link | split:'/':5 }}" title=""><img data-ng-src="{{ photo.media.m }}" alt=""></a>
+    </div>
+    <div class="content">
+        <h2><a data-ng-href="/details/{{ photo.link | split:'/':5 }}" title="">{{ photo.title }}</a></h2>
+        <div class="info">
+            <a data-ng-href="https://www.flickr.com/photos/{{ photo.author_id }}/" title="" target="_blank" class="author">{{ photo.author | split:'(':1 | rtrim:'\\)' }}</a>
+            <span class="timestamp">Published: {{ photo.published | date:"dd MMM yyyy 'at' h:mm a" }}</span>
+            <a data-ng-href="{{ photo.link }}" title="" target="_blank">View on Flickr</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,225 @@
+/* GENERAL */
+/*********************************************************************/
+
+$background-color: #F4F5F7;
+$font-stack: 'Open Sans', sans-serif;
+$base-font-size: 13px;
+$primary-font-color: #1C2125;
+$link-color: #48C3FF;
+$link-color-hover: #92959A;
+
+$breakpoint-phone: "only screen and (max-width : 560px)";
+$breakpoint-tablet: "only screen and (max-width : 800px)";
+
+body {
+    background: $background-color;
+    font: 400 $base-font-size $font-stack;
+    color: $primary-font-color; }
+
+a:link, a:active, a:visited {
+    color: $link-color;
+}
+a:hover {
+    color: $link-color-hover;
+}
+
+.inner {
+    width: 100%;
+    min-width: 320px;
+    height: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+/*********************************************************************/
+
+#header {
+    width: 100%;
+    height: 60px;
+    background: #1E2329;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    h1 {
+        font-size: 26px;
+        line-height: 60px;
+        text-transform: uppercase;
+        color: #FFF;
+    }
+    a {
+        color: #B1B6BA
+    }
+    a:hover {
+        color: #FFF
+    }
+}
+
+/* CONTENT */
+/*********************************************************************/
+
+#content {
+    padding-top: 80px;
+}
+
+.box {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #DFE0E2;
+    background: #FFF;
+    overflow: hidden;
+    position: relative;
+    h2 {
+        margin-bottom: 10px;
+        font-size: 24px;
+        font-weight: 300;
+        text-transform: capitalize;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.search {
+    width: 100%;
+    height: 20px;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+}
+
+.img {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    text-align: center;
+    float: left;
+    a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        font-size: 0;
+        line-height: 0;
+        position: relative;
+    }
+}
+
+.content {
+    margin-left: 170px;
+    p {
+        margin-bottom: 14px;
+    }
+}
+
+.author {
+    font-size: 15px;
+}
+
+.info {
+    line-height: 22px;
+    position: relative;
+}
+
+.info a {
+    padding-right: 15px;
+}
+
+.timestamp {
+    padding-right: 15px;
+}
+
+a.back {
+    height: 28px;
+    padding: 0 10px;
+    background: $link-color;
+    line-height: 28px;
+    font-weight: 600;
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    &::after {
+        width: 0;
+        height: 0;
+        content: " ";
+        border-style: solid;
+        border-width: 14px 15px 14px 0;
+        border-color: transparent $link-color transparent transparent;
+        position: absolute;
+        top: 0;
+        left: -15px;
+    }
+}
+a.back:hover {
+    background: $link-color-hover;
+    &::after {
+        border-color: transparent $link-color-hover transparent transparent;
+    }
+}
+
+.details {
+    h2 {
+        margin-right: 80px;
+    }
+    .info {
+        margin-bottom: 14px;
+    }
+    .author {
+        font-size: 13px;
+        padding: 0;
+    }
+}
+
+.social {
+    height: 20px;
+    overflow: hidden;
+}
+
+/* MEDIA QUERIES */
+/*********************************************************************/
+
+@media #{$breakpoint-tablet} {
+    h1 {
+        text-align: center;
+    }
+    .info {
+        padding-top: 30px;
+    }
+    .timestamp {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .details {
+        .info {
+            padding-top: 0;
+        }
+        .timestamp {
+            position: static;
+        }
+    }
+
+}
+
+@media #{$breakpoint-phone} {
+    .img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 14px;
+        float: none;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .content {
+        margin: 0;
+    }
+}

@@ -1,0 +1,22 @@
+<!-- Using the ngRepeat directive to display the content based on the photoID retrieved from the URL -->
+<div class="box details" data-ng-repeat="photo in photos.items | filter:photo_id">
+    <h2><a data-ng-href="{{ photo.link }}" title="" target="_blank">{{ photo.title }}</a></h2>
+    <a data-ng-click="back()" title="" class="back">Back</a>
+    <div class="info">
+        <a data-ng-href="https://www.flickr.com/photos/{{ photo.author_id }}/" title="" target="_blank" class="author">{{ photo.author | split:'(':1 | rtrim:'\\)' }}</a>
+        <span class="separator"> | </span>
+        <span class="timestamp">Published: {{ photo.published | date:"dd MMM yyyy 'at' h:mm a" }}</span>
+    </div>
+    <div class="img">
+        <img data-ng-src="{{ photo.media.m }}" alt="">
+    </div>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit asperiores, id, quam magni mollitia autem aut incidunt ab sequi nostrum, fugit similique doloremque aliquam sit provident. Reiciendis debitis sit, et!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit asperiores, id, quam magni mollitia autem aut incidunt ab sequi nostrum, fugit similique doloremque aliquam sit provident. Reiciendis debitis sit, et!</p>
+        <p><strong>Tags: </strong>{{ photo.tags }}</p>
+        <!-- Loading the Google Plus button -->
+        <div class="social">
+            <script src="https://apis.google.com/js/platform.js"></script>
+            <div class="g-plusone" data-size="medium" data-annotation="none"></div>
+        </div>
+    </div>
+</div>

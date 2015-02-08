@@ -1,0 +1,38 @@
+<!doctype html>
+<html data-ng-app="flickrApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="App description">
+    <meta name="author" content="Ciprian Frigioiu">
+    <base href="/">
+    <title>Flickr Photo Feed</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular.route.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body data-ng-controller="mainController">
+
+    <div id="page">
+
+        <div id="header">
+            <div class="inner">
+                <h1><a data-ng-href="/">Flickr Photo Feed</a></h1>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="inner">
+                <div data-ng-view></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
